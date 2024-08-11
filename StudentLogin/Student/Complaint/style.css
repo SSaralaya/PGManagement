@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Geologica', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul li a {
+    position: relative;
+    color: #0087ca;
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    width: 98%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+main {
+    display: flex;
+    min-height: 80dvh;
+    align-items: center;
+}
+
+.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
